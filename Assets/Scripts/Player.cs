@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.HighDefinition;
 
 public class Player : MonoBehaviour
 {
@@ -179,11 +178,11 @@ public class Player : MonoBehaviour
 
     public void SetAbbaration(float x)
     {
-        ChromaticAberration aber;
-        if (postProfile.TryGet<ChromaticAberration>(out aber))
-        {
-            aber.intensity.value = x;
-        }
+        //ChromaticAberration aber;
+        //if (postProfile.TryGet<ChromaticAberration>(out aber))
+        //{
+        //    aber.intensity.value = x;
+        //}
     }
 
     private void Awake()
@@ -202,7 +201,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Bounce");
-        if (bouncefirst> 2)
+        if (bouncefirst > 2)
         {
             var go = Instantiate(bounce, transform.position, Quaternion.identity);
             Destroy(go, 2f);
